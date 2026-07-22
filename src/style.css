@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased min-h-screen font-sans;
+  }
+
+  /* Scrollbar personalizado */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-300 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+}
+
+@layer components {
+  /* Tarjeta de superficie estándar */
+  .card-surface {
+    @apply bg-white rounded-2xl border border-slate-100 shadow-sm;
+  }
+
+  /* Botón primario */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-800 to-primary-600 hover:from-primary-900 hover:to-primary-700
+           text-white font-bold rounded-xl shadow-md shadow-primary-800/20
+           hover:shadow-primary-800/30 transition-all duration-200
+           hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  /* Input estándar */
+  .input-field {
+    @apply w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5
+           text-sm font-medium text-slate-800 outline-none transition-all duration-200
+           hover:border-slate-300 focus:bg-white focus:ring-4 focus:ring-primary-500/10
+           focus:border-primary-500;
+  }
+
+  /* Badge método de pago */
+  .badge-metodo {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold;
+  }
+}
+
+/* Animación de entrada para cobros nuevos en el feed */
+.cobro-enter-active {
+  animation: slideInFeed 0.5s ease-out;
+}
+@keyframes slideInFeed {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Transición de página */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
