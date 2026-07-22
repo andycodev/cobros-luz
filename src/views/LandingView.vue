@@ -180,7 +180,8 @@
               <!-- Ícono método de pago -->
               <div
                 :class="['w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0', metodoBg(cobro.metodo_pago)]">
-                <component :is="getMetodoIcon(cobro.metodo_pago)" class="w-5 h-5" :class="metodoIconColor(cobro.metodo_pago)" />
+                <component :is="getMetodoIcon(cobro.metodo_pago)" class="w-5 h-5"
+                  :class="metodoIconColor(cobro.metodo_pago)" />
               </div>
 
               <!-- Info principal -->
@@ -352,7 +353,8 @@
                       <div class="flex items-center gap-3 min-w-0">
                         <div
                           :class="['w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0', metodoBg(cobro.metodo_pago)]">
-                          <component :is="getMetodoIcon(cobro.metodo_pago)" class="w-5 h-5" :class="metodoIconColor(cobro.metodo_pago)" />
+                          <component :is="getMetodoIcon(cobro.metodo_pago)" class="w-5 h-5"
+                            :class="metodoIconColor(cobro.metodo_pago)" />
                         </div>
                         <div class="min-w-0">
                           <p class="text-xs font-bold text-slate-800 truncate">{{ cobro.pagado_por }}</p>
@@ -461,8 +463,8 @@ const fechaInicio = ref<string>('')
 const fechaFin = ref<string>('')
 
 const opcionesRapidas = [
-  { id: '7d', label: 'Últimos 7 días' },
-  { id: '30d', label: 'Últimos 30 días' },
+  // { id: '7d', label: 'Últimos 7 días' },
+  //{ id: '30d', label: 'Últimos 30 días' },
   { id: '90d', label: 'Últimos 90 días' },
   { id: 'mes_actual', label: 'Mes actual' },
   { id: 'mes_anterior', label: 'Mes anterior' },
